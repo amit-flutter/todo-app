@@ -1,20 +1,21 @@
+import 'package:demo/core/constants/label_const.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'core/bindings/app_bindings.dart';
 import 'core/routes/app_pages.dart';
-import 'package:hive_ce_flutter/hive_flutter.dart';
+import 'core/theme/theme_controller.dart';
+import 'core/theme/app_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Hive(Flutter) & Register boxes.
   await Hive.initFlutter();
   await Hive.openBox('app_box');
 
-  // Initialize bindings (services + controllers)
   AppBindings().dependencies();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,15 +23,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Smart ToDo',
-      debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.initial,
-      getPages: AppPages.routes,
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        useMaterial3: true,
-      ),
-    );
+    final themeCtrl = Get.find<ThemeController>();
+
+    return Obx(() {
+      return GetMaterialApp(
+        title: LabelConst.appName,
+        debugShowCheckedModeBanner: false,
+        initialRoute: AppPages.initial,
+        getPages: AppPages.routes,
+        theme: AppTheme.light,
+        darkTheme: AppTheme.dark,
+        themeMode: themeCtrl.themeMode,
+      );
+    });
   }
 }

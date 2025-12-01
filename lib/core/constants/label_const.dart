@@ -2,7 +2,10 @@
 
 class LabelConst {
   // App
-  static const appName = "Todo App";
+  static const appName = "Smart Todo App";
+  static const themeLight = "Light Theme";
+  static const themeDark = "Dark Theme";
+  static const themeMode = "Theme Mode";
 
   // Home
   static const homeTitle = "Tasks";

@@ -1,11 +1,14 @@
-import 'package:demo/core/constants/label_const.dart';
-import 'package:demo/features/todo/controllers/todo_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:demo/core/constants/label_const.dart';
+import 'package:demo/core/theme/theme_controller.dart';
+import '../../controllers/todo_controller.dart';
 
 class SettingsPage extends StatelessWidget {
   SettingsPage({super.key});
+
   final TodoController ctrl = Get.find<TodoController>();
+  final ThemeController themeCtrl = Get.find<ThemeController>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +45,12 @@ class SettingsPage extends StatelessWidget {
               title: const Text(LabelConst.ruleWarnIfHighExcluded),
               value: toggles['warn_if_high_excluded'] ?? true,
               onChanged: (_) => ctrl.toggleRule('warn_if_high_excluded'),
+            ),
+            const Divider(height: 30),
+            SwitchListTile(
+              title: const Text(LabelConst.themeDark),
+              value: themeCtrl.isDark,
+              onChanged: (v) => themeCtrl.toggleTheme(v),
             ),
           ],
         );
