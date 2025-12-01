@@ -43,9 +43,7 @@ class TaskModel {
       category: map['category'] ?? 'Personal',
       estimatedMinutes: (map['estimatedMinutes'] ?? 0) as int,
       completed: map['completed'] ?? false,
-      createdAt: map['createdAt'] != null
-          ? DateTime.parse(map['createdAt'])
-          : DateTime.now(),
+      createdAt: map['createdAt'] != null ? DateTime.parse(map['createdAt']) : DateTime.now(),
     );
   }
 }
