@@ -44,35 +44,28 @@ lib/
 ├── core/
 │   ├── bindings/
 │   │   └── app_bindings.dart
+│   ├── constants/
+│   │   └── label_const.dart
 │   ├── routes/
 │   │   ├── app_pages.dart
 │   │   └── app_routes.dart
+│   ├── theme/
+│   │   ├── app_theme.dart
+│   │   └── theme_contrller.dart
 │   └── services/
-│       ├── storage_service.dart
+│       └── storage_service.dart
 │
 ├── features/
 │   └── todo/
 │       ├── controllers/
 │       ├── presentation/
+│       │   ├── dialogs/
 │       │   ├── pages/
 │       │   └── widgets/
 │       └── models/
 │
 └── main.dart
 ```
-
----
-
-## 🛠️ Tech Stack
-
-| Tool                     | Usage                         |
-| ------------------------ | ----------------------------- |
-| **Flutter (Latest)**     | UI framework                  |
-| **GetX**                 | State management, routing, DI |
-| **Hive**                 | Local storage                 |
-
-
----
 
 ## ✨ Highlights of My Work
 

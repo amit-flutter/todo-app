@@ -171,6 +171,7 @@ class TodoController extends GetxController {
   }
 
   final _highExcludedWarning = false.obs;
+
   bool get highExcludedWarning => _highExcludedWarning.value;
 
   // toggle a rule

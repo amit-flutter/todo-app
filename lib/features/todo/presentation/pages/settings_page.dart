@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:demo/core/constants/label_const.dart';
 import 'package:demo/core/theme/theme_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import '../../controllers/todo_controller.dart';
 
 class SettingsPage extends StatelessWidget {

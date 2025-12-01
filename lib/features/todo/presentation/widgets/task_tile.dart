@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 class TaskTile extends StatelessWidget {
   final TaskModel task;
+
   const TaskTile({required this.task, super.key});
 
   @override
