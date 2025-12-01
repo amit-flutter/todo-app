@@ -1,10 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:demo/features/todo/presentation/pages/home_page.dart';
+import 'package:demo/features/todo/presentation/pages/settings_page.dart';
+import 'package:get/get.dart';
 
-class  extends StatelessWidget {
-  const ({super.key});
+import 'app_routes.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+class AppPages {
+  static const initial = Routes.homeScreen;
+
+  static final routes = [
+    GetPage(name: Routes.homeScreen, page: () => HomePage()),
+    GetPage(name: Routes.settingScreen, page: () => SettingsPage()),
+  ];
 }

@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:demo/core/services/storage_service.dart';
+import 'package:demo/features/todo/controllers/todo_controller.dart';
+import 'package:get/get.dart';
 
-class  extends StatelessWidget {
-  const ({super.key});
+class AppBindings {
+  void dependencies() {
+    // Services
+    Get.put(StorageService(), permanent: true);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container();
+    // Feature controllers (lazy put to create when used)
+    Get.lazyPut<TodoController>(() => TodoController());
   }
 }
